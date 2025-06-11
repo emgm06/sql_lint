@@ -1,0 +1,12 @@
+SELECT CarPart
+  CarModel
+    ,CarName
+CAR_INDEX.CarID,
+  CAR_ITEM.HasTrailer,
+CAR_ITEM
+
+  
+  FROM CAR_INDEX
+LEFT JOIN CAR_ITEM
+      ON CAR_INDEX.CarID = CAR_ITEM.CarID
+    
