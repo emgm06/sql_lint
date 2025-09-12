@@ -2,6 +2,6 @@
 sql_file_exts = .sql
 dialect = mysql
 
-[sqlfluff:rules:convention_not_equal]
+[sqlfluff:rules:convention.not_equal]
 #c_style i.e `!=`
 preferred_not_equal_style = c_style
