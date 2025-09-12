@@ -4,6 +4,4 @@ repos:
     rev: 3.4.0
     hooks:
       - id: sqlfluff-lint
-        args: [--dialect, mysql]
       - id: sqlfluff-fix
-        args: [--dialect, mysql]
