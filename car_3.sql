@@ -1,2 +1,2 @@
-SELECT * FROM my_other_car_table as B 
-WHERE b.Type <> 'Skoda'
+SELECT * FROM my_other_car_table
+WHERE b.type <> 'Skoda'
