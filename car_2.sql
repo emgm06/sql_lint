@@ -1,5 +1,5 @@
 SELECT
-    c.Engine,
-    c.Torque
+    c.engine,
+    c.torque
 FROM my_car_table AS c
-WHERE c.engine <> 'Turbo'
+WHERE c.engine != 'Turbo'
