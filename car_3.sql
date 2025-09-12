@@ -1,6 +1,6 @@
 SELECT
-    b.type,
-    b.transmission
-FROM my_other_car_table AS b
+    best_table.type,
+    best_table.transmission
+FROM my_other_car_table AS best_table
 
-WHERE b.type != 'Skoda'
+WHERE best_table.type != 'Skoda'
