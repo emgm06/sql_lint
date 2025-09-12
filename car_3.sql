@@ -3,4 +3,4 @@ SELECT
     b.transmission
 FROM my_other_car_table AS b
 
-WHERE b.type <> 'Skoda'
+WHERE b.type != 'Skoda'
