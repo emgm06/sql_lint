@@ -1,6 +1,8 @@
 name: sql-check
 
 on: [push, pull_request]
+  paths:
+    - '!old'
 
 jobs:
   pre-commit:
