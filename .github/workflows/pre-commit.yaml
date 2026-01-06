@@ -1,7 +1,11 @@
 name: sql-check
 
-on: [push, pull_request]
-  paths:
+on: 
+  push:
+    paths:
+    - '!old'
+  pull_request:
+    paths:
     - '!old'
 
 jobs:
