@@ -3,10 +3,10 @@ name: sql-check
 on: 
   push:
     paths:
-    - '!old'
+    - "!old"
   pull_request:
     paths:
-    - '!old'
+    - "!old"
 
 jobs:
   pre-commit:
