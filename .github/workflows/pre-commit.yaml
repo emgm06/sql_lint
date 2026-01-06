@@ -2,11 +2,11 @@ name: sql-check
 
 on: 
   push:
-    paths:
-      - '!old'
+    paths-ignore:
+      - 'old/**'
   pull_request:
-    paths:
-      - '!old'
+    paths-ignore:
+      - 'old/**'
 
 jobs:
   pre-commit:
