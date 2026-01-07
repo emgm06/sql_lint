@@ -35,6 +35,6 @@ jobs:
       - name: changed files
         uses: tj-actions/changed-files@v46
         id: changed-files
-      - if: steps.filter.outputs.ignore == 'false'
+      - if: steps.filter.outputs.ignore == 'true'
         run: pre-commit run --files ${{ steps.changed-files.outputs.all_changed_files }}
         shell: bash
