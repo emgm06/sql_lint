@@ -1,13 +1,8 @@
 name: sql-check
 
 on: 
-  push:
-    paths-ignore:
-      - 'old/**'
-  pull_request:
-    paths-ignore:
-      - 'old/**'
-
+  [push, pull_request]
+  
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
