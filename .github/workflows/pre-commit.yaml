@@ -42,7 +42,7 @@ jobs:
       - name: run pre-commit
         if: steps.filter.outputs.ignore == 'true'
         env: 
-          all_changed_files = ${{ steps.changed-files.outputs.all_changed_files }}
+          all_changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
           pre-commit run --files ${all_changed_files}
           for file in ${all_changed_files}; do
