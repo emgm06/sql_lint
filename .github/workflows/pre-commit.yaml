@@ -37,7 +37,7 @@ jobs:
         with:
           files_ignore: |
            old/**
-           **.yaml
+           .github/**
 
       - name: run pre-commit
         if: steps.filter.outputs.ignore == 'true'
