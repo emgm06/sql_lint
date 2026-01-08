@@ -34,6 +34,8 @@ jobs:
       - name: changed files
         uses: tj-actions/changed-files@v46
         id: changed-files
+        with:
+          files_ignore: "old/**"
 
       - name: run pre-commit
         if: steps.filter.outputs.ignore == 'true'
