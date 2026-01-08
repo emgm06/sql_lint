@@ -35,7 +35,9 @@ jobs:
         uses: tj-actions/changed-files@v46
         id: changed-files
         with:
-          files_ignore: "old/**-m "
+          files_ignore: |
+           old/**
+           **.yaml
 
       - name: run pre-commit
         if: steps.filter.outputs.ignore == 'true'
