@@ -1,7 +1,8 @@
 name: sql-check
 
-on: [push, pull_request]
-
+on: 
+  [push, pull_request]
+  
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
@@ -9,6 +10,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -16,11 +18,29 @@ jobs:
     
       - name: Install pre-commit
         run: pip install pre-commit
-    
-    #- name: Run pre-commit
-    #run: pre-commit run --all-files
-    
-      - id: changed-files
+
+      - name: Filter paths
+        uses: dorny/paths-filter@v3
+        id: filter
+        with: 
+          filters: |
+            ignore:
+              - '!old/**'
+      - name: changed files
         uses: tj-actions/changed-files@v46
-      - run: pre-commit run --files ${{ steps.changed-files.outputs.all_changed_files }}
+        id: changed-files
+        with:
+          files_ignore: |
+           old/**
+           .github/**
+
+      - name: run pre-commit
+        if: steps.filter.outputs.ignore == 'true'
+        env: 
+          all_changed_files: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          pre-commit run --files ${all_changed_files}
+          for file in ${all_changed_files}; do
+            echo "pre-commit running on $file.."
+          done
         shell: bash
